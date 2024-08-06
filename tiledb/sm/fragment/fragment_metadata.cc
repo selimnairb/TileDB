@@ -1310,7 +1310,7 @@ std::string FragmentMetadata::encode_name(const std::string& name) const {
   for (unsigned i = 0; i < attributes.size(); ++i) {
     const std::string attr_name = attributes[i]->name();
     if (attr_name == name) {
-      return "a" + std::to_string(idx);
+      return std::string("a") + std::to_string(idx);
     }
   }
 
@@ -1318,7 +1318,7 @@ std::string FragmentMetadata::encode_name(const std::string& name) const {
     const auto& dim_name{array_schema_->dimension_ptr(i)->name()};
     if (dim_name == name) {
       const unsigned dim_idx = idx - array_schema_->attribute_num() - 1;
-      return "d" + std::to_string(dim_idx);
+      return std::string("d") + std::to_string(dim_idx);
     }
   }
 
